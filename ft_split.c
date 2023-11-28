@@ -6,100 +6,107 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:17:49 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/27 13:36:06 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/11/28 19:31:04 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static long	count_strings(char const *s, char c)
+
+int	count_words(const char *str, char c)
 {
-	long	counter;
-	long	index;
+	int	i;
+	int	trigger;
 
-	counter = 1;
-	index = 0;
-	while (s[index] != '\0')
+	i = 0;
+	trigger = 0;
+	while (*str)
 	{
-		if (s[index] != c && (s[index + 1] == c || s[index + 1] == '\0'))
-			counter++;
-		index++;
-	}
-	return (counter);
-}
-
-static long	count_chars(char const *s, char c, long index)
-{
-	long	counter;
-
-	counter = 0;
-	while (s[index] != c && s[index] != '\0')
-	{
-		counter++;
-		index++;
-	}
-	return (counter);
-}
-
-static char	*generate_substr(char const *s, char c, long s_index)
-{
-	char	*substr;
-	long	substr_index;
-
-	substr = (char *)malloc((count_chars(s, c, s_index) + 1));
-	if (substr != NULL)
-	{
-		substr_index = 0;
-		while (s[s_index] != c && s[s_index] != '\0')
+		if (*str != c && trigger == 0)
 		{
-			substr[substr_index] = s[s_index];
-			s_index++;
-			substr_index++;
+			trigger = 1;
+			i++;
 		}
-		substr[substr_index] = '\0';
+		else if (*str == c)
+		{
+			trigger = 0;
+		}
+		str++;
 	}
-	return (substr);
+	return (i);
 }
+
+char	*create_word(const char *str, int start, int finish)
+{
+	char	*word;
+	int		i;
+
+	i = 0;
+	word = malloc((finish - start + 1) * sizeof(char));
+	while (start < finish)
+	{
+		word[i] = str[start];
+		i++;
+		start++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+// void free_arr(char *arr ,const char s, char c)
+// {
+//     int i;
+
+//     i = 0;
+//     if (arr == NULL)
+//         return;
+//     while (i < count_words(s ,c))
+//     {
+//         free(arr[i]);
+//         i++;
+//     }
+//     free(arr);
+// }
 
 char	**ft_split(char const *s, char c)
 {
+	size_t	i;
+	size_t	j;
+	int		index;
 	char	**arr;
-	long	arr_index;
-	long	s_index;
 
-	if (s == NULL)
+	i = 0;
+	j = 0;
+	index = -1;
+	arr = malloc ((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !arr)
 		return (NULL);
-	arr = (char **)malloc((sizeof(char *)) * (count_strings(s, c) + 1));
-	if (arr != NULL)
+	while (i <= (size_t)ft_strlen(s))
 	{
-		arr_index = 0;
-		s_index = 0;
-		while (s[s_index] != '\0')
+		if (s[i] != c && index < 0)
+			index = i;
+		else if ((s[i] == c || i == (size_t)ft_strlen(s)) && index >= 0)
 		{
-			if (s[s_index] != c)
-			{
-				arr[arr_index] = generate_substr(s, c, s_index);
-				s_index = s_index + ft_strlen(arr[arr_index]) - 1;
-				arr_index++;
-			}
-			s_index++;
+			arr[j] = create_word(s, index, i);
+			j++;
+			index = -1;
 		}
-		arr[arr_index] = NULL;
+		i++;
 	}
+	arr[j] = 0;
 	return (arr);
 }
 
-// int	main(void)
+// int main(void)
 // {
-// 	int	i;
-// 	char string[] = "To be or not to be that is the question";
-// 	char c = ' ';
-// 	char **result = ft_split(string, c);
-// 	i = 0;
-// 	while(result[i] != NULL)
-// 	{
-// 		printf("%s\n", result[i]);
-// 		i++;
-// 	}
-// 	return (0);
+//     char s[] ="MAR,APR,MAI,JUN,JUL";
+//     char c = ',';
+//     char **result = ft_split(s, c);
+//     int i = 0;
+//     while (result != 0)
+//     {
+//         printf("%s\n",result[i]);
+//         i++;
+//     }
+//     return (0);
 // }
