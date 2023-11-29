@@ -6,12 +6,11 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:17:49 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/28 19:31:04 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:58:04 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 int	count_words(const char *str, char c)
 {
@@ -53,14 +52,14 @@ char	*create_word(const char *str, int start, int finish)
 	return (word);
 }
 
-// void free_arr(char *arr ,const char s, char c)
+// void free_arr(char *arr )
 // {
 //     int i;
 
 //     i = 0;
 //     if (arr == NULL)
 //         return;
-//     while (i < count_words(s ,c))
+//     while (arr[i] != NULL)
 //     {
 //         free(arr[i]);
 //         i++;
@@ -93,7 +92,7 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
-	arr[j] = 0;
+	arr[j] = NULL;
 	return (arr);
 }
 
@@ -103,10 +102,12 @@ char	**ft_split(char const *s, char c)
 //     char c = ',';
 //     char **result = ft_split(s, c);
 //     int i = 0;
-//     while (result != 0)
+//     while (result[i] != NULL)
 //     {
 //         printf("%s\n",result[i]);
+// 		free(result[i]);
 //         i++;
 //     }
+// 	free(result);
 //     return (0);
 // }

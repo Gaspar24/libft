@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 15:34:09 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/27 13:53:21 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:39:34 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ size_t	ft_strlcpy(char *dst, const char *rsrc, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *rsrc, size_t dstsize);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-char	*ft_strchr(const char *str, int c);
+char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *str, int c, size_t n);
@@ -60,6 +60,13 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	**ft_split(char const *s, char c);
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew_bonus(void *content);
+void	ft_lstadd_front_bonus(t_list **lst, t_list *new);
+int		ft_lstsize_bonus(t_list *lst);
+t_list	*ft_lstlast_bonus(t_list *lst);
+void	ft_lstadd_back_bonus(t_list **lst, t_list *new);
+void	ft_lstdelone_bonus(t_list *lst, void (*del)(void *));
+void	ft_lstclear_bonus(t_list **lst, void (*del)(void *));
+void	ft_lstiter_bonus(t_list *lst, void (*f)(void *));
 
 #endif

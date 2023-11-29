@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:43:06 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/23 18:04:37 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:14:07 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*ft_itoa(int n)
 
 // int main(void)
 // {
-// 	char *result = ft_itoa(-2147483648LL);
+// 	char *result = ft_itoa(232);
 // 	printf("%s\n",result);
 // 	return (0);
 // }
