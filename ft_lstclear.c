@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 16:33:06 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/29 15:38:00 by msacaliu         ###   ########.fr       */
+/*   Created: 2023/11/28 15:14:08 by msacaliu          #+#    #+#             */
+/*   Updated: 2023/11/30 12:16:04 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast_bonus(t_list *lst)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*curr;
+	t_list	*aux;
 
-	curr = lst;
+	curr = *lst;
 	while (curr != NULL)
 	{
-		if (curr->next == NULL)
-			break ;
+		aux = curr;
 		curr = curr->next;
+		del(aux->content);
+		free(aux);
 	}
-	return (curr);
+	*lst = NULL;
 }

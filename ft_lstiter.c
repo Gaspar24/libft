@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 13:54:44 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/29 15:37:46 by msacaliu         ###   ########.fr       */
+/*   Created: 2023/11/28 16:02:53 by msacaliu          #+#    #+#             */
+/*   Updated: 2023/11/30 12:16:12 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front_bonus(t_list **lst, t_list *new)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	new->next = *lst;
-	*lst = new;
+	t_list	*curr;
+
+	curr = lst;
+	while (curr != NULL)
+	{
+		(f)(curr->content);
+		curr = curr ->next;
+	}
 }

@@ -6,11 +6,39 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:17:49 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/29 17:58:04 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/11/30 14:28:36 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	**free_arr(char **arr )
+{
+	int	i;
+
+	i = 0;
+	if (arr == NULL)
+		return (NULL);
+	while (arr[i] != NULL)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+	return (NULL);
+}
+
+int	str_len_mod(const char *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0' && s[i] != c)
+	{
+		i++;
+	}
+	return (i);
+}
 
 int	count_words(const char *str, char c)
 {
@@ -35,14 +63,16 @@ int	count_words(const char *str, char c)
 	return (i);
 }
 
-char	*create_word(const char *str, int start, int finish)
+char	*create_word(const char *str, int start, char c)
 {
 	char	*word;
 	int		i;
 
 	i = 0;
-	word = malloc((finish - start + 1) * sizeof(char));
-	while (start < finish)
+	word = malloc((str_len_mod(&str[start], c) + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
+	while (str[start] != c && str[start] != '\0')
 	{
 		word[i] = str[start];
 		i++;
@@ -52,45 +82,29 @@ char	*create_word(const char *str, int start, int finish)
 	return (word);
 }
 
-// void free_arr(char *arr )
-// {
-//     int i;
-
-//     i = 0;
-//     if (arr == NULL)
-//         return;
-//     while (arr[i] != NULL)
-//     {
-//         free(arr[i]);
-//         i++;
-//     }
-//     free(arr);
-// }
-
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
-	int		index;
 	char	**arr;
 
 	i = 0;
 	j = 0;
-	index = -1;
 	arr = malloc ((count_words(s, c) + 1) * sizeof(char *));
 	if (!s || !arr)
-		return (NULL);
-	while (i <= (size_t)ft_strlen(s))
+		return (free_arr(arr));
+	while (s[i] != '\0')
 	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == (size_t)ft_strlen(s)) && index >= 0)
+		if (s[i] == c)
+			i++;
+		else if ((s[i] != c))
 		{
-			arr[j] = create_word(s, index, i);
+			arr[j] = create_word(s, i, c);
+			if (!arr[j])
+				return (free_arr(arr));
 			j++;
-			index = -1;
+			i = i + str_len_mod(&s[i], c);
 		}
-		i++;
 	}
 	arr[j] = NULL;
 	return (arr);

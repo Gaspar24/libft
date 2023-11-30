@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 15:34:09 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/29 17:39:34 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:16:53 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,13 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	**ft_split(char const *s, char c);
-t_list	*ft_lstnew_bonus(void *content);
-void	ft_lstadd_front_bonus(t_list **lst, t_list *new);
-int		ft_lstsize_bonus(t_list *lst);
-t_list	*ft_lstlast_bonus(t_list *lst);
-void	ft_lstadd_back_bonus(t_list **lst, t_list *new);
-void	ft_lstdelone_bonus(t_list *lst, void (*del)(void *));
-void	ft_lstclear_bonus(t_list **lst, void (*del)(void *));
-void	ft_lstiter_bonus(t_list *lst, void (*f)(void *));
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 #endif
