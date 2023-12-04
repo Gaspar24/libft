@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:30:12 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/29 17:40:41 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/02 13:46:30 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	int	i;
+
+	i = 0;
+	c = c % 256;
+	while (s[i] != '\0')
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		if (s[i] == c)
+			return ((char *) s + i);
+		i++;
 	}
 	if (c == '\0')
-		return ((char *)s);
-	return (0);
+		return ((char *) s + i);
+	return (NULL);
 }
 
 // int	main(void)

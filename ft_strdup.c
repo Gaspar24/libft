@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:39:53 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/16 18:50:01 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:56:05 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strdup(const char *s1)
 	char	*new_string;
 
 	i = 0;
-	if (!s1)
-		return (NULL);
 	new_string = (char *) malloc((ft_strlen(s1)+1));
 	if (!new_string)
 		return (NULL);
@@ -36,8 +34,8 @@ char	*ft_strdup(const char *s1)
 // {
 // 	char string[] = "test12323423";
 // 	char *result = ft_strdup(NULL);
-// 	char *result_org = strdup(NULL);
+// 	// char *result_org = strdup(NULL);
 // 	printf("my fct: %s\n",result);
-// 	printf("org fct: %s\n",result_org);
+// 	// printf("org fct: %s\n",result_org);
 // 	return(0);
 // }

@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 15:34:09 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/30 12:16:53 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:12:27 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <string.h>
-# include <stdbool.h>
-# include <limits.h>
 
 typedef struct s_list
 {
@@ -32,7 +30,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_strlen(const char *s);
-void	*ft_memset(void *str, int c, size_t n);
+void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
@@ -60,13 +58,14 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	**ft_split(char const *s, char c);
-t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-int		ft_lstsize(t_list *lst);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstnew_bonus(void *content);
+void	ft_lstadd_front_bonus(t_list **lst, t_list *new);
+int		ft_lstsize_bonus(t_list *lst);
+t_list	*ft_lstlast_bonus(t_list *lst);
+void	ft_lstadd_back_bonus(t_list **lst, t_list *new);
+void	ft_lstdelone_bonus(t_list *lst, void (*del)(void *));
+void	ft_lstclear_bonus(t_list **lst, void (*del)(void *));
+void	ft_lstiter_bonus(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap_bonus(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

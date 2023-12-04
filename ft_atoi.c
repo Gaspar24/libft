@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:18:32 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/21 14:09:12 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/02 14:04:38 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_atoi(const char *str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			neg *= -1;
+			neg = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')

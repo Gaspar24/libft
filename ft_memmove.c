@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 12:00:59 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/23 18:42:06 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/04 14:11:06 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	i = 0;
 	if (!s2 && !s1)
 		return (NULL);
-	if (s2 == NULL || s1 == NULL)
-		return (SIG_ERR);
 	while (i < n)
 	{
 		if (s1 < s2)
@@ -40,10 +38,10 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 // {
 // 	size_t	n = 4;
 // 	char	dest[n];
-// 	char	source[] = "";
-// 	// char *result = ft_memmove(dest, NULL , n);
-// 	char *result_org = memmove(dest,NULL ,n);
-// 	// printf("my fct :%s\n",result);
-// 	printf("org fct : %s\n",result_org);
+// 	char	source[] = "test";
+// 	char *result = ft_memmove(dest, NULL, n);
+// 	// char *result_org = memmove(NULL,source ,n);
+// 	printf("my fct :%s\n",result);
+// 	// printf("org fct : %s\n",result_org);
 // 	return (0);
 // }

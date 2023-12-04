@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 16:02:53 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/30 12:16:12 by msacaliu         ###   ########.fr       */
+/*   Created: 2023/11/27 16:33:06 by msacaliu          #+#    #+#             */
+/*   Updated: 2023/12/04 13:11:19 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstlast_bonus(t_list *lst)
 {
 	t_list	*curr;
 
 	curr = lst;
 	while (curr != NULL)
 	{
-		(f)(curr->content);
-		curr = curr ->next;
+		if (curr->next == NULL)
+			break ;
+		curr = curr->next;
 	}
+	return (curr);
 }

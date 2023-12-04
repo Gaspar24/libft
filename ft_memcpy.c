@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:17:38 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/15 16:03:31 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:49:39 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	new_d = (char *) dst;
 	new_s = (char *) src;
+	if (!dst && !src)
+		return (NULL);
 	i = 0;
 	while (i < n)
 	{
