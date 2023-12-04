@@ -6,13 +6,13 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:44:28 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/12/04 13:11:40 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/04 15:06:56 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize_bonus(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int		count;
 	t_list	*curr;

@@ -6,13 +6,13 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 15:14:08 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/12/04 13:10:57 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/04 15:06:29 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear_bonus(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*curr;
 	t_list	*aux;

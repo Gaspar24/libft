@@ -6,13 +6,13 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 16:33:06 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/12/04 13:11:19 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/04 15:06:43 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast_bonus(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*curr;
 
