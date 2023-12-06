@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 17:08:31 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/12/04 15:39:31 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/05 12:41:20 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*string;
 	size_t	i;
 
-	if (start > (unsigned int)ft_strlen(s))
+	if (start >= (unsigned int)ft_strlen(s))
 		return (ft_strdup(""));
 	if (len > (size_t)ft_strlen(s + start))
 		len = ft_strlen(s + start);

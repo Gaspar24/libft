@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:00:36 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/14 16:30:02 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/05 12:15:48 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	while (*src && i + 1 < size)
 	{
 		*dest = *src;
-		++i;
+		i++;
 		dest++;
 		src++;
 	}

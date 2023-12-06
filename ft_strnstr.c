@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:06:35 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/12/01 18:06:57 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/05 12:18:17 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // int main(void)
 // {
 // 	char big[] = "boo Bar Baz";
-// 	char small[] = "Bar";
+// 	char small[] = "bar";
 // 	char *result = ft_strnstr(big,small,8);
 // 	char *result_org = strnstr(big,small,8);
 // 	printf("org result: %s\n",result_org);

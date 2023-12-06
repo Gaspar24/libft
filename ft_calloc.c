@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:14:59 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/29 14:49:40 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/05 12:04:38 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,3 @@ void	*ft_calloc(size_t count, size_t size)
 		ft_memset(ptr, 0, total);
 	return (ptr);
 }
-
-// int	main(void)
-// {
-// 	return (0);
-// }

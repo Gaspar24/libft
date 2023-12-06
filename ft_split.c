@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:17:49 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/11/30 14:28:36 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:39:38 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ char	**ft_split(char const *s, char c)
 
 // int main(void)
 // {
-//     char s[] ="MAR,APR,MAI,JUN,JUL";
+//     char s[] =",,,MAR,,,,,APR,MAI,JUN,JUL";
 //     char c = ',';
 //     char **result = ft_split(s, c);
 //     int i = 0;

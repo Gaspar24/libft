@@ -6,7 +6,7 @@
 /*   By: msacaliu <msacaliu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 19:36:28 by msacaliu          #+#    #+#             */
-/*   Updated: 2023/12/02 14:00:33 by msacaliu         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:05:35 by msacaliu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int	main(void)
 // {
-// 	char s1[] = "ababaaaMy aaaaname is Simonbbaaabba";
+// 	char s1[] = "ababaaaMy name is Simonbbaaabba";
 // 	char set[] = "ab";
 // 	char *result = ft_strtrim(s1,set);
 // 	printf("%s\n",result);
